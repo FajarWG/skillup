@@ -136,10 +136,6 @@ module.exports = {
       fontFamily: {
         "SF-Pro": ["SF-Pro", "Arial", "sans-serif"],
       },
-      boxShadow: {
-        1: "0rem 0.875rem 3.125rem 0rem rgba(15, 23, 42, 0.12)",
-        2: "0rem 0.25rem 1rem 0rem rgba(15, 23, 42, 0.2)",
-      },
     },
   },
   plugins: [],
