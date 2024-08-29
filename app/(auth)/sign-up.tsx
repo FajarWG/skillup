@@ -99,7 +99,7 @@ const SignUp = () => {
   return (
     <SafeAreaView className="flex h-full items-center bg-white px-6">
       <View>
-        <View className="flex flex-row items-center justify-center w-full px-6 pr-12">
+        <View className="flex flex-row items-center justify-center w-full px-8 pr-8">
           <TouchableOpacity
             onPress={() => {
               router.replace("/(auth)/welcome");
@@ -152,7 +152,7 @@ const SignUp = () => {
       <View className="w-full mt-20 px-2">
         <Link
           href="/sign-in"
-          className="text-lg text-center text-general-200 mt-10"
+          className=" text-sm text-center font-medium text-neutral-400 mt-10"
         >
           Already have an account?{" "}
           <Text className="text-primary-500">Log In</Text>
@@ -204,10 +204,6 @@ const SignUp = () => {
       </ReactNativeModal>
       <ReactNativeModal isVisible={showSuccessModal}>
         <View className="bg-white px-7 py-9 rounded-2xl min-h-[300px]">
-          {/* <Image
-              source={images.check}
-              className="w-[110px] h-[110px] mx-auto my-5"
-            /> */}
           <TickCircle size="110" color="#10B981" className="mx-auto my-5" />
           <Text className="text-3xl font-semibold text-center">Verified</Text>
           <Text className="text-base text-gray-400 text-center mt-2">
