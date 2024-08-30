@@ -31,7 +31,7 @@ const OAuth = () => {
       <View className="flex flex-row justify-center">
         <Buttons
           title="Google"
-          className="mt-5 w-40 flex flex-row justify-center rounded-lg mr-4"
+          className="mt-5 w-full flex flex-row justify-center rounded-lg mr-4"
           IconLeft={() => (
             <Image
               source={require("../assets/icons/google.png")}
@@ -42,7 +42,7 @@ const OAuth = () => {
           textVariant="primary"
           onPress={handleGoogleSignIn}
         />
-        <Buttons
+        {/* <Buttons
           title="LinkedIn"
           className="mt-5 w-40 shadow-none flex flex-row justify-center rounded-lg"
           IconLeft={() => (
@@ -54,7 +54,7 @@ const OAuth = () => {
           variant="outline"
           textVariant="primary"
           onPress={handleGoogleSignIn}
-        />
+        /> */}
       </View>
     </View>
   );

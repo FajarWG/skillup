@@ -44,6 +44,7 @@ const SignUp = () => {
     if (!isLoaded) return;
     try {
       await signUp.create({
+        firstName: form.name,
         emailAddress: form.email,
         password: form.password,
       });
@@ -66,14 +67,6 @@ const SignUp = () => {
         code: verification.code,
       });
       if (completeSignUp.status === "complete") {
-        await fetchAPI("/(api)/user", {
-          method: "POST",
-          body: JSON.stringify({
-            name: form.name,
-            email: form.email,
-            clerkId: completeSignUp.createdUserId,
-          }),
-        });
         await setActive({ session: completeSignUp.createdSessionId });
         setVerification({
           ...verification,
@@ -123,7 +116,7 @@ const SignUp = () => {
           </Text>
         </View>
       </View>
-      <View className="w-full px-2">
+      <View className="w-full px-2 mt-11">
         <InputField
           label="Name"
           placeholder="Enter name"
@@ -149,7 +142,7 @@ const SignUp = () => {
           onChangeText={(value) => setForm({ ...form, password: value })}
         />
       </View>
-      <View className="w-full mt-20 px-2">
+      <View className="w-full relative pb-0 ">
         <Link
           href="/sign-in"
           className=" text-sm text-center font-medium text-neutral-400 mt-10"

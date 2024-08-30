@@ -95,7 +95,7 @@ const SignIn = () => {
           onChangeText={(value) => setForm({ ...form, password: value })}
         />
 
-        <View className="w-full mt-20 px-2">
+        <View className="w-full relative pb-0">
           <Link
             href="/sign-up"
             className=" text-sm text-center font-medium text-neutral-400 mt-10"
