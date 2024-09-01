@@ -20,8 +20,13 @@ const Home = () => {
   const { signOut } = useAuth();
 
   return (
-    <ScrollView contentInsetAdjustmentBehavior="automatic">
-      <SafeAreaView className="p-6">
+    <SafeAreaView className="p-6">
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        className="no-scrollbar"
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
+      >
         <SignedIn>
           <View>
             <Text className=" text-2xl font-medium">
@@ -54,22 +59,11 @@ const Home = () => {
                 <View className="flex flex-row gap-2 align-middle items-center">
                   <View>
                     <Text className="text-neutral-400 font-medium text-sm">
-                      Estimate Salary:
-                    </Text>
-                    <Text className="text-white text-xl font-semibold">
-                      Rp12
-                      <Text className="text-xs leading-6">Jt</Text>
-                    </Text>
-                  </View>
-
-                  <View className="w-[1px] h-10 bg-neutral-400" />
-                  <View>
-                    <Text className="text-neutral-400 font-medium text-sm">
                       Your Score:
                     </Text>
                     <Text className="text-white text-xl font-semibold">
-                      Rp12
-                      <Text className="text-xs leading-6">Jt</Text>
+                      20
+                      <Text className="text-xs leading-6">/100</Text>
                     </Text>
                   </View>
                 </View>
@@ -120,8 +114,8 @@ const Home = () => {
             <ActivityIndicator size="large" color="#3366FF" />
           </View>
         </SignedOut>
-      </SafeAreaView>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 

@@ -126,9 +126,9 @@ const Layout = () => {
         }}
       />
       <Tabs.Screen
-        name="checking"
+        name="cv"
         options={{
-          title: "Checking",
+          title: "CV",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <TabIcon
@@ -140,7 +140,7 @@ const Layout = () => {
                 />
               }
               focused={focused}
-              name="Checking"
+              name="CV"
             />
           ),
         }}
