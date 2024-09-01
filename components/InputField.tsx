@@ -11,6 +11,7 @@ import {
 
 const InputField = ({
   label,
+  labelAddOn,
   icon,
   secureTextEntry = false,
   labelStyle,
@@ -23,6 +24,7 @@ const InputField = ({
   value,
   onChangeText,
   keyboardType,
+  multiline,
   ...props
 }: InputFieldProps) => {
   return (
@@ -31,8 +33,11 @@ const InputField = ({
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View className="my-2 w-full">
-          <Text className={`text-lg font-semibold mb-3 ${labelStyle}`}>
-            {label}
+          <Text className={`text-lg font-semibold mb-3 pt-3 ${labelStyle}`}>
+            {label}{" "}
+            {labelAddOn && (
+              <Text className="text-neutral-400 text-xs">{labelAddOn}</Text>
+            )}
           </Text>
           <View
             className={`flex flex-row justify-start items-center relative bg-white px-4 rounded-lg border border-neutral-300 focus:border-primary-500  ${containerStyle}`}
@@ -46,6 +51,8 @@ const InputField = ({
               value={value}
               onChangeText={onChangeText}
               keyboardType={keyboardType}
+              multiline={multiline}
+              textAlignVertical={multiline ? "top" : "center"}
               {...props}
             />
           </View>

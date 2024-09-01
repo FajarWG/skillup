@@ -10,6 +10,7 @@ declare interface ButtonProps extends TouchableOpacityProps {
 
 declare interface InputFieldProps extends TextInputProps {
   label: string;
+  labelAddOn?: string;
   icon?: any;
   secureTextEntry?: boolean;
   labelStyle?: string;
@@ -18,6 +19,7 @@ declare interface InputFieldProps extends TextInputProps {
   iconStyle?: string;
   className?: string;
   placeholder?: string;
+  multiline?: boolean;
   textContentType?: TextInputProps["textContentType"];
   value: string;
   onChangeText: (value: string) => void;
