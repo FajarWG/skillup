@@ -22,13 +22,6 @@ export const onBoarding = [
   },
 ];
 
-// logo,
-//   jobTitle,
-//   companyName,
-//   location,
-//   jobType,
-//   jobLevel,
-//   salary,
 export const jobList = [
   {
     logo: "https://topup.ebelanja.id/_next/image?url=https%3A%2F%2Fs3.belanjapasti.com%2Fmedia%2Fimage%2Fdana-41157.png&w=640&q=75",
@@ -65,5 +58,50 @@ export const jobList = [
     jobType: "Part Time",
     jobLevel: "Junior",
     salary: "15,000,000",
+  },
+];
+
+export const cvHistory = [
+  {
+    id: 1,
+    title: "Frontend Developer",
+    date: "Sunday, 20 June 2024",
+    score: 80,
+  },
+  {
+    id: 2,
+    title: "Backend Developer",
+    date: "Monday, 21 June 2024",
+    score: 70,
+  },
+  {
+    id: 3,
+    title: "UI/UX Designer",
+    date: "Tuesday, 22 June 2024",
+    score: 90,
+  },
+  {
+    id: 4,
+    title: "Fullstack Developer",
+    date: "Wednesday, 23 June 2024",
+    score: 85,
+  },
+  {
+    id: 5,
+    title: "Mobile Developer",
+    date: "Thursday, 24 June 2024",
+    score: 75,
+  },
+  {
+    id: 6,
+    title: "Data Scientist",
+    date: "Friday, 25 June 2024",
+    score: 95,
+  },
+  {
+    id: 7,
+    title: "Machine Learning Engineer",
+    date: "Saturday, 26 June 2024",
+    score: 100,
   },
 ];
