@@ -116,7 +116,8 @@ const Jobs = () => {
                 <View style={styles.dropdownButtonStyle}>
                   <Briefcase size={20} color="#111827" />
                   <Text style={styles.dropdownButtonTxtStyle}>
-                    {(selectedItem && selectedItem.title) || "Select your mood"}
+                    {(selectedItem && selectedItem.title) ||
+                      "Select category jobs"}
                   </Text>
                   {/* <Icon name={isOpened ? 'chevron-up' : 'chevron-down'} style={styles.dropdownButtonArrowStyle} /> */}
                   <ArrowDown2 size={20} color="#111827" />
