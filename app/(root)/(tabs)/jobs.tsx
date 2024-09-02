@@ -204,6 +204,7 @@ const Jobs = () => {
               />
             ))}
           </View>
+          <View className="h-16"></View>
         </SignedIn>
         <SignedOut>
           <View className="w-full flex items-center justify-center align-middle">

@@ -24,6 +24,7 @@ export const onBoarding = [
 
 export const jobList = [
   {
+    id: 1,
     logo: "https://topup.ebelanja.id/_next/image?url=https%3A%2F%2Fs3.belanjapasti.com%2Fmedia%2Fimage%2Fdana-41157.png&w=640&q=75",
     jobTitle: "Frontend Developer",
     companyName: "Google",
@@ -33,6 +34,7 @@ export const jobList = [
     salary: "20,000,000",
   },
   {
+    id: 2,
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png",
     jobTitle: "Backend Developer",
     companyName: "Facebook",
@@ -42,6 +44,7 @@ export const jobList = [
     salary: "15,000,000",
   },
   {
+    id: 3,
     logo: "https://pngimg.com/d/amazon_PNG21.png",
     jobTitle: "UI/UX Designer",
     companyName: "Amazon",
@@ -51,6 +54,7 @@ export const jobList = [
     salary: "18,000,000",
   },
   {
+    id: 4,
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png",
     jobTitle: "Frontend Developer",
     companyName: "Facebook",

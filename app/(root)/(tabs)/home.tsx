@@ -20,7 +20,7 @@ const Home = () => {
   const { signOut } = useAuth();
 
   return (
-    <SafeAreaView className="p-6">
+    <SafeAreaView className="p-6 bg-white">
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         className="no-scrollbar"
@@ -68,7 +68,13 @@ const Home = () => {
                   </View>
                 </View>
 
-                <Buttons className="px-4 py-2 w-24" title="Check" />
+                <Buttons
+                  className="px-4 py-2 w-24"
+                  title="Check"
+                  onPress={() => {
+                    router.replace("/(root)/(tabs)/skills");
+                  }}
+                />
               </View>
             </View>
           </View>
