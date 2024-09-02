@@ -33,12 +33,14 @@ const InputField = ({
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View className="my-2 w-full">
-          <Text className={`text-lg font-semibold mb-3 pt-3 ${labelStyle}`}>
-            {label}{" "}
-            {labelAddOn && (
-              <Text className="text-neutral-400 text-xs">{labelAddOn}</Text>
-            )}
-          </Text>
+          {label && (
+            <Text className={`text-lg font-semibold mb-3 pt-3 ${labelStyle}`}>
+              {label}{" "}
+              {labelAddOn && (
+                <Text className="text-neutral-400 text-xs">{labelAddOn}</Text>
+              )}
+            </Text>
+          )}
           <View
             className={`flex flex-row justify-start items-center relative bg-white px-4 rounded-lg border border-neutral-300 focus:border-primary-500  ${containerStyle}`}
           >
