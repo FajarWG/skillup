@@ -32,6 +32,11 @@ export const jobList = [
     jobType: "Full Time",
     jobLevel: "Senior",
     salary: "20,000,000",
+    company:
+      "Google is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware.",
+    description:
+      "Frontend developers are responsible for ensuring the alignment of web design and user experience requirements, optimizing web pages for maximum efficiency, and maintaining brand consistency across all web pages, among other duties.",
+    skillRequired: "HTML, CSS, JavaScript, ReactJS, VueJS, AngularJS",
   },
   {
     id: 2,
@@ -42,6 +47,11 @@ export const jobList = [
     jobType: "Part Time",
     jobLevel: "Junior",
     salary: "15,000,000",
+    company:
+      "Facebook is an American online social media and social networking service company based in Menlo Park, California. Its website was launched on February 4, 2004, by Mark Zuckerberg, along with fellow Harvard College students and roommates.",
+    description:
+      "Backend developers are responsible for developing server-side web application logic and integrating the front-end components built by front-end developers, among other duties.",
+    skillRequired: "NodeJS, ExpressJS, Python, Django, Ruby, Ruby on Rails",
   },
   {
     id: 3,
@@ -52,6 +62,11 @@ export const jobList = [
     jobType: "Full Time",
     jobLevel: "Mid",
     salary: "18,000,000",
+    company:
+      "Amazon.com, Inc. is an American multinational technology company which focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
+    description:
+      "UI/UX designers are responsible for designing and enhancing user interfaces for web and mobile applications, among other duties.",
+    skillRequired: "Figma, Adobe XD, Sketch, InVision, Zeplin",
   },
   {
     id: 4,
@@ -62,6 +77,11 @@ export const jobList = [
     jobType: "Part Time",
     jobLevel: "Junior",
     salary: "15,000,000",
+    company:
+      "Facebook is an American online social media and social networking service company based in Menlo Park, California. Its website was launched on February 4, 2004, by Mark Zuckerberg, along with fellow Harvard College students and roommates.",
+    description:
+      "Frontend developers are responsible for ensuring the alignment of web design and user experience requirements, optimizing web pages for maximum efficiency, and maintaining brand consistency across all web pages, among other duties.",
+    skillRequired: "HTML, CSS, JavaScript, ReactJS, VueJS, AngularJS",
   },
 ];
 
