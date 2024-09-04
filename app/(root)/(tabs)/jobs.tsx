@@ -194,6 +194,7 @@ const Jobs = () => {
             {jobList.map((job, index) => (
               <JobCard
                 key={index}
+                id={job.id}
                 logo={job.logo}
                 jobTitle={job.jobTitle}
                 companyName={job.companyName}

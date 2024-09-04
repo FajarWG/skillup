@@ -1,7 +1,8 @@
 import { router } from "expo-router";
-import { Image, Text, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 
 const JobCard = ({
+  id,
   logo,
   jobTitle,
   companyName,
@@ -10,6 +11,7 @@ const JobCard = ({
   jobLevel,
   salary,
 }: {
+  id: number;
   logo: string;
   jobTitle: string;
   companyName: string;
@@ -19,7 +21,7 @@ const JobCard = ({
   salary: string;
 }) => {
   return (
-    <View>
+    <TouchableOpacity onPress={() => router.navigate("/(root)/jobs-detail/1")}>
       <View className="w-full">
         <View className="flex flex-row items-center">
           <View className="p-3">
@@ -57,7 +59,7 @@ const JobCard = ({
       </View>
 
       <View className="w-full h-[2px] bg-neutral-200 mt-2" />
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -95,6 +95,7 @@ const Home = () => {
             {/* Job Card */}
             {jobList.map((job, index) => (
               <JobCard
+                id={job.id}
                 key={index}
                 logo={job.logo}
                 jobTitle={job.jobTitle}
@@ -106,14 +107,7 @@ const Home = () => {
               />
             ))}
           </View>
-          <Buttons
-            onPress={() => {
-              signOut();
-              router.replace("/(auth)/welcome");
-            }}
-            title="Sign Out"
-            className="mt-3"
-          />
+          <View className="h-16"></View>
         </SignedIn>
         <SignedOut>
           <View className="w-full flex items-center justify-center align-middle">
