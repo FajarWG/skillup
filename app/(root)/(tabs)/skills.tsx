@@ -4,7 +4,7 @@ import JobCard from "@/components/JobCard";
 import Task from "@/components/TaskList";
 import { jobList } from "@/constants";
 import { SignedIn, SignedOut, useUser } from "@clerk/clerk-expo";
-import { Link, router } from "expo-router";
+import { Link, Redirect, router } from "expo-router";
 import { AddSquare, Code, MinusSquare, TickCircle } from "iconsax-react-native";
 import { useState } from "react";
 import {
@@ -99,6 +99,10 @@ const Skill = () => {
     );
   };
 
+  if (user == null) {
+    return <Redirect href="/(root)/set-skill" />;
+  }
+
   return (
     <SafeAreaView className="p-6 bg-white">
       <ScrollView
@@ -111,7 +115,7 @@ const Skill = () => {
         <SignedIn>
           <View>
             <Text className=" text-2xl font-medium">
-              Hi, {user?.firstName}👋
+              Hi, {(user as any)?.firstName}👋
             </Text>
             <Text className="mt-2 text-sm font-medium text-neutral-500">
               Improve your skills to be the best
