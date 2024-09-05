@@ -9,7 +9,7 @@ const Profile = () => {
   const { signOut } = useAuth();
 
   return (
-    <SafeAreaView className="bg-white">
+    <SafeAreaView className="bg-white h-full">
       <View className="flex flex-row justify-between bg-primary-100 p-6">
         <Logout size={24} color="#D6E4FF" />
 
@@ -33,7 +33,7 @@ const Profile = () => {
         <Text className="text-neutral-900 text-xl">{user?.firstName}</Text>
       </View>
 
-      <View className="mt-6 px-6">
+      {/* <View className="mt-6 px-6">
         <Text className=" text-lg font-medium">
           Your CV
           <Text className="text-primary-500 text-sm font-medium"> 0/3</Text>
@@ -54,7 +54,7 @@ const Profile = () => {
             </View>
           </View>
         </View>
-      </View>
+      </View> */}
     </SafeAreaView>
   );
 };
