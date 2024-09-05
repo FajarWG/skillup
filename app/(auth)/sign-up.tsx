@@ -90,24 +90,29 @@ const SignUp = () => {
     }
   };
   return (
-    <SafeAreaView className="flex h-full items-center bg-white px-6">
-      <View>
-        <View className="flex flex-row items-center justify-center w-full px-8 pr-8">
+    <SafeAreaView className="w-full h-full bg-white">
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
+        className="px-6"
+      >
+        <View className="flex flex-row justify-between w-[80%] py-6">
           <TouchableOpacity
             onPress={() => {
               router.replace("/(auth)/welcome");
             }}
-            className="w-full flex items-start p-5"
+            className="w-full flex items-start"
           >
             <ArrowLeft size="24" color="#292D32" />
           </TouchableOpacity>
           <Image
             source={require("@/assets/images/logo.png")}
-            className="w-[61px] h-[19px]"
+            className="w-[61px] h-[19px] "
           />
         </View>
 
-        <View className="w-full mt-10 px-6">
+        <View className="w-full">
           <Text className="text-[28px] text-neutral-900 font-medium">
             Create Your Account
           </Text>
@@ -115,48 +120,50 @@ const SignUp = () => {
             Please create an account to find your dream job
           </Text>
         </View>
-      </View>
-      <View className="w-full px-2 mt-11">
-        <InputField
-          label="Name"
-          placeholder="Enter name"
-          icon={<Profile size="20" color="#9CA3AF" />}
-          value={form.name}
-          onChangeText={(value) => setForm({ ...form, name: value })}
-        />
-        <InputField
-          label="Email"
-          placeholder="Enter email"
-          icon={<Sms size="20" color="#9CA3AF" />}
-          textContentType="emailAddress"
-          value={form.email}
-          onChangeText={(value) => setForm({ ...form, email: value })}
-        />
-        <InputField
-          label="Password"
-          placeholder="Enter password"
-          icon={<Lock size="20" color="#9CA3AF" />}
-          secureTextEntry={true}
-          textContentType="password"
-          value={form.password}
-          onChangeText={(value) => setForm({ ...form, password: value })}
-        />
-      </View>
-      <View className="w-full relative pb-0 ">
-        <Link
-          href="/sign-in"
-          className=" text-sm text-center font-medium text-neutral-400 mt-10"
-        >
-          Already have an account?{" "}
-          <Text className="text-primary-500">Log In</Text>
-        </Link>
-        <Buttons
-          title="Create Account"
-          onPress={onSignUpPress}
-          className="mt-6"
-        />
-        <OAuth />
-      </View>
+
+        <View className="w-full px-2 mt-11">
+          <InputField
+            label="Name"
+            placeholder="Enter name"
+            icon={<Profile size="20" color="#9CA3AF" />}
+            value={form.name}
+            onChangeText={(value) => setForm({ ...form, name: value })}
+          />
+          <InputField
+            label="Email"
+            placeholder="Enter email"
+            icon={<Sms size="20" color="#9CA3AF" />}
+            textContentType="emailAddress"
+            value={form.email}
+            onChangeText={(value) => setForm({ ...form, email: value })}
+          />
+          <InputField
+            label="Password"
+            placeholder="Enter password"
+            icon={<Lock size="20" color="#9CA3AF" />}
+            secureTextEntry={true}
+            textContentType="password"
+            value={form.password}
+            onChangeText={(value) => setForm({ ...form, password: value })}
+          />
+        </View>
+        <View className="w-full">
+          <Link
+            href="/sign-in"
+            className=" text-sm text-center font-medium text-neutral-400 mt-10"
+          >
+            Already have an account?{" "}
+            <Text className="text-primary-500">Log In</Text>
+          </Link>
+          <Buttons
+            title="Create Account"
+            onPress={onSignUpPress}
+            className="mt-6"
+          />
+          <OAuth />
+        </View>
+        <View className="h-16"></View>
+      </ScrollView>
       <ReactNativeModal
         isVisible={verification.state === "pending"}
         // onBackdropPress={() =>

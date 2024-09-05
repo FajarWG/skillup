@@ -31,7 +31,7 @@ const OAuth = () => {
       <View className="flex flex-row justify-center">
         <Buttons
           title="Google"
-          className="mt-5 w-full flex flex-row justify-center rounded-lg mr-4"
+          className="mt-5 w-full flex flex-row justify-center rounded-lg"
           IconLeft={() => (
             <Image
               source={require("../assets/icons/google.png")}
