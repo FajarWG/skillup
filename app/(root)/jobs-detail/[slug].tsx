@@ -7,13 +7,15 @@ import { useState } from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useLocalSearchParams } from "expo-router";
+import Buttons from "@/components/Buttons";
+import useUserDataStore from "@/lib/userdata";
 
 const JobsDetail = () => {
   const { slug } = useLocalSearchParams();
 
   const data = jobList[slug as keyof typeof jobList] as any;
 
-  const [search, setSearch] = useState("");
+  const { setJob }: any = useUserDataStore();
 
   const [tabs, setTabs] = useState(false);
 
@@ -100,6 +102,16 @@ const JobsDetail = () => {
               </View>
             )}
           </View>
+        </View>
+        <View className="px-6">
+          <Buttons
+            title="Check CV"
+            onPress={() => {
+              setJob(data);
+              router.push("/(root)/(tabs)/cv");
+            }}
+            className="mt-6"
+          />
         </View>
       </ScrollView>
     </SafeAreaView>

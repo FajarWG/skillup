@@ -17,9 +17,11 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import * as DocumentPicker from "expo-document-picker";
+import useUserDataStore from "@/lib/userdata";
+import JobCard from "@/components/JobCard";
 
 const CV = () => {
-  const [description, setDescription] = useState("");
+  const { job }: any = useUserDataStore();
 
   const [fileCV, setFileCV] = useState(null) as any;
 
@@ -80,16 +82,24 @@ const CV = () => {
                 </View>
               </View>
             </TouchableOpacity>
-            {/* <InputField
-              label="Job Description"
-              labelAddOn="(optional)"
-              placeholder="Job description of the job posting"
-              textContentType="textArea"
-              value={description}
-              className="h-56"
-              multiline={true}
-              onChangeText={(value) => setDescription(value)}
-            /> */}
+            <View>
+              <Text className={`text-lg font-semibold mb-3 pt-3 `}>
+                Selected Job
+              </Text>
+              {job && (
+                <JobCard
+                  id={job.id}
+                  logo={job.logo}
+                  jobTitle={job.jobTitle}
+                  companyName={job.companyName}
+                  location={job.location}
+                  jobType={job.jobType}
+                  jobLevel={job.jobLevel}
+                  salary={job.salary}
+                />
+              )}
+            </View>
+
             <Buttons
               title="Check"
               disabled={fileCV === null}

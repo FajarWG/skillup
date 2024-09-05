@@ -91,55 +91,64 @@ const ResultCV = () => {
           </View>
 
           <View className="px-6 mt-6">
-            <Text className="font-semibold text-neutral-900 text-lg">
-              Work Experience
+            <Text className=" text-neutral-900 text-sm">
+              From the comparison between the job description and the keywords
+              of the CV, there are some matches and mismatches:
+            </Text>
+            <Text className="font-semibold text-neutral-900 text-lg mt-2">
+              Matches:
             </Text>
             <Text className="text-neutral-500 text-sm">
-              Your work experience is solid, but needs to be reinforced with
-              more specific achievements. For example, add details like
-              “Successfully reduced system response time by 30% through backend
-              optimization.”
+              1. There is some overlap between the skills requested in the job
+              description and some keywords in the CV, such as business
+              analytics, business process, and process improvements.
             </Text>
-            <View className="flex flex-row items-center mt-5 p-3  rounded-lg bg-[#FFF6C9] ">
-              <LampOn className="mr-2" size="32" color="#FFD714" />
-              <Text className="text-sm w-[90%] text-neutral-600">
-                Improve the experience section by focusing more on the
-                measurable results of your work.
-              </Text>
-            </View>
+            <Text className="text-neutral-500 text-sm">
+              2. There are some related keywords such as risk management,
+              compliance, and financial industry that could relate to the needs
+              in business management and financial aspects.
+            </Text>
           </View>
           <View className="px-6 mt-6">
             <Text className="font-semibold text-neutral-900 text-lg">
-              Skills
+              Mismatch:
             </Text>
             <Text className="text-neutral-500 text-sm">
-              The skills you listed are relevant, but we see you could add
-              skills that are currently in high demand in Software Engineering
-              such as Docker, Kubernetes, or CI/CD.
+              1. Most of the keywords in the CV are related to risk management,
+              banking, and financial management, while the job description
+              emphasizes more on technical skills such as APIs, Microservices,
+              and Stream Processing which are not covered in the CV.
+            </Text>
+            <Text className="text-neutral-500 text-sm">
+              2. There are no keywords that clearly refer to IT technology and
+              architecture such as Service-Oriented Architecture (SOA) requested
+              in the job description.
             </Text>
             <View className="flex flex-row items-center mt-5 p-3  rounded-lg bg-[#FFF6C9] ">
               <LampOn className="mr-2" size="32" color="#FFD714" />
-              <Text className="text-sm w-[90%] text-neutral-600">
-                Consider taking courses related to the skills mentioned above to
-                increase your competitiveness.
+
+              <Text className="text-sm w-[90%] font-semibold text-neutral-600">
+                To improve suitability, it is recommended to add more specific
+                keywords related to APIs, Microservices, and Stream Processing
+                to the CV.
               </Text>
             </View>
-          </View>
-          <View className="px-6 mt-6">
-            <Text className="font-semibold text-neutral-900 text-lg">
-              Format and Structure:
-            </Text>
-            <Text className="text-neutral-500 text-sm">
-              Your CV has a good structure, but the spacing between sections
-              could be widened slightly to make it easier to read. Also ensure
-              consistency in the use of fonts and bullet points.
-            </Text>
-            <View className="flex flex-row items-center mt-5 p-3  rounded-lg bg-[#FFF6C9] ">
+            <View className="flex flex-row items-center mt-2 p-3  rounded-lg bg-[#FFF6C9] ">
               <LampOn className="mr-2" size="32" color="#FFD714" />
-              <Text className="text-sm w-[90%] text-neutral-600">
-                Use bullet points consistently to separate achievements and
-                responsibilities, and check the layout to make it more
-                professional.
+
+              <Text className="text-sm w-[90%] font-semibold text-neutral-600 mt-1">
+                Highlighting experience or skills relevant to Application
+                Programming Interfaces (API) or Service-Oriented Architecture
+                (SOA) in the CV can help improve the fit.
+              </Text>
+            </View>
+            <View className="flex flex-row items-center mt-2 p-3  rounded-lg bg-[#FFF6C9] ">
+              <LampOn className="mr-2" size="32" color="#FFD714" />
+
+              <Text className="text-sm w-[90%] font-semibold text-neutral-600 mt-1">
+                Including education or training related to IT technology and
+                architecture in your CV can also send a positive signal to
+                recruiters.
               </Text>
             </View>
           </View>
