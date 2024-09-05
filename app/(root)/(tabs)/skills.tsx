@@ -3,6 +3,7 @@ import InputField from "@/components/InputField";
 import JobCard from "@/components/JobCard";
 import Task from "@/components/TaskList";
 import { jobList } from "@/constants";
+import useUserDataStore from "@/lib/userdata";
 import { SignedIn, SignedOut, useUser } from "@clerk/clerk-expo";
 import { Link, Redirect, router } from "expo-router";
 import { AddSquare, Code, MinusSquare, TickCircle } from "iconsax-react-native";
@@ -30,19 +31,13 @@ const Skill = () => {
 
   const [recommended, setRecommended] = useState([
     "Web Development",
-    "Mobile Development",
-    "Data Science",
-    "Machine Learning",
-    "Cyber Security",
-    "DevOps",
-    "Database Management",
-    "UI/UX Design",
-    "Cloud Computing",
-    "Digital Marketing",
+    "JavaScript",
+    "React",
+    "React Native",
   ]);
 
   const [task, setTask] = useState("");
-  const [taskItems, setTaskItems] = useState(["Learn React Native"]);
+  const [taskItems, setTaskItems] = useState(["HTML", "CSS"]);
   const [addSkill, setAddSkill] = useState(false);
 
   const handleAddTask = () => {
@@ -99,7 +94,9 @@ const Skill = () => {
     );
   };
 
-  if (user == null) {
+  const { skill }: any = useUserDataStore();
+
+  if (skill == null) {
     return <Redirect href="/(root)/set-skill" />;
   }
 
@@ -133,7 +130,7 @@ const Skill = () => {
                   </View>
                   <View className="ml-4">
                     <Text className="text-white font-semibold text-lg">
-                      Web Development
+                      {skill.work}
                     </Text>
                   </View>
                 </View>

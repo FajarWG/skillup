@@ -85,7 +85,7 @@ const JobsDetail = () => {
                 </Text>
 
                 <Text className="text-neutral-900 font-semibold text-base mt-5">
-                  Skill Required
+                  Requirements
                 </Text>
                 <Text className="text-neutral-700 mt-2">
                   {data.skillRequired}

@@ -16,8 +16,20 @@ import {
 
 import { SafeAreaView } from "react-native-safe-area-context";
 
+import * as DocumentPicker from "expo-document-picker";
+
 const CV = () => {
   const [description, setDescription] = useState("");
+
+  const [fileCV, setFileCV] = useState(null) as any;
+
+  const _pickDocument = async () => {
+    let result = await DocumentPicker.getDocumentAsync({});
+
+    if (!result.canceled) {
+      setFileCV(result);
+    }
+  };
 
   return (
     <SafeAreaView className="p-6 bg-white">
@@ -43,22 +55,32 @@ const CV = () => {
               </Text>
             </Text>
 
-            <View className="w-full bg-[#ECF2FF] rounded-xl mt-5 p-[18px] border-dashed border border-primary-500">
-              <View className="flex flex-row items-center">
-                <View className="p-3 bg-primary-100 rounded-xl">
-                  <DocumentUpload size="28" color="#3366FF" variant="Bold" />
-                </View>
-                <View className="ml-4 text-center">
-                  <Text className="text-neutral-900 font-semibold text-lg">
-                    Uploud your CV ATS file
-                  </Text>
-                  <Text className="text-neutral-400 text-sm">
-                    Max. file size 10MB
-                  </Text>
+            <TouchableOpacity onPress={() => _pickDocument()}>
+              <View className="w-full bg-[#ECF2FF] rounded-xl mt-5 p-[18px] border-dashed border border-primary-500">
+                <View className="flex flex-row items-center">
+                  <View className="p-3 bg-primary-100 rounded-xl">
+                    <DocumentUpload size="28" color="#3366FF" variant="Bold" />
+                  </View>
+                  <View className="ml-4 text-center">
+                    {fileCV !== null ? (
+                      <Text className="text-neutral-900 font-semibold text-lg">
+                        {fileCV.assets[0].name || "Uploud your CV ATS file"}
+                      </Text>
+                    ) : (
+                      <>
+                        <Text className="text-neutral-900 font-semibold text-lg">
+                          Uploud your CV ATS file
+                        </Text>
+                        <Text className="text-neutral-400 text-sm">
+                          Max. file size 10MB
+                        </Text>
+                      </>
+                    )}
+                  </View>
                 </View>
               </View>
-            </View>
-            <InputField
+            </TouchableOpacity>
+            {/* <InputField
               label="Job Description"
               labelAddOn="(optional)"
               placeholder="Job description of the job posting"
@@ -67,10 +89,13 @@ const CV = () => {
               className="h-56"
               multiline={true}
               onChangeText={(value) => setDescription(value)}
-            />
+            /> */}
             <Buttons
               title="Check"
-              // onPress={onSignInPress}
+              disabled={fileCV === null}
+              onPress={() => {
+                router.push("/(root)/results-cv");
+              }}
               className="mt-2"
             />
           </View>

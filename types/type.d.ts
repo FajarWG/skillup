@@ -6,6 +6,7 @@ declare interface ButtonProps extends TouchableOpacityProps {
   IconRight?: React.ComponentType<any>;
   className?: string;
   onPress?: () => void;
+  disabled?: boolean;
 }
 
 declare interface InputFieldProps extends TextInputProps {

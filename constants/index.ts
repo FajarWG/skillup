@@ -24,8 +24,8 @@ export const onBoarding = [
 
 export const jobList = [
   {
-    id: 1,
-    logo: "https://topup.ebelanja.id/_next/image?url=https%3A%2F%2Fs3.belanjapasti.com%2Fmedia%2Fimage%2Fdana-41157.png&w=640&q=75",
+    id: 0,
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png",
     jobTitle: "Frontend Developer",
     companyName: "Google",
     location: "Jakarta, Indonesia",
@@ -39,7 +39,7 @@ export const jobList = [
     skillRequired: "HTML, CSS, JavaScript, ReactJS, VueJS, AngularJS",
   },
   {
-    id: 2,
+    id: 1,
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png",
     jobTitle: "Backend Developer",
     companyName: "Facebook",
@@ -51,10 +51,11 @@ export const jobList = [
       "Facebook is an American online social media and social networking service company based in Menlo Park, California. Its website was launched on February 4, 2004, by Mark Zuckerberg, along with fellow Harvard College students and roommates.",
     description:
       "Backend developers are responsible for developing server-side web application logic and integrating the front-end components built by front-end developers, among other duties.",
-    skillRequired: "NodeJS, ExpressJS, Python, Django, Ruby, Ruby on Rails",
+    skillRequired:
+      "Bachelor's degree in Computer Science, Web Development, or a related field. \n1+ years of experience in frontend development. \nProficiency in HTML, CSS, JavaScript, and frontend frameworks (e.g., React, Vue.js, Angular).Strong understanding of responsive design and cross-browser compatibility. \nExperience with version control systems like Git. \nExcellent problem-solving and analytical skills.",
   },
   {
-    id: 3,
+    id: 2,
     logo: "https://pngimg.com/d/amazon_PNG21.png",
     jobTitle: "UI/UX Designer",
     companyName: "Amazon",
@@ -69,7 +70,7 @@ export const jobList = [
     skillRequired: "Figma, Adobe XD, Sketch, InVision, Zeplin",
   },
   {
-    id: 4,
+    id: 3,
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png",
     jobTitle: "Frontend Developer",
     companyName: "Facebook",

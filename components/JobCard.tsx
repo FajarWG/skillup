@@ -21,7 +21,9 @@ const JobCard = ({
   salary: string;
 }) => {
   return (
-    <TouchableOpacity onPress={() => router.navigate("/(root)/jobs-detail/1")}>
+    <TouchableOpacity
+      onPress={() => router.navigate(`/(root)/jobs-detail/${id}`)}
+    >
       <View className="w-full">
         <View className="flex flex-row items-center">
           <View className="p-3">

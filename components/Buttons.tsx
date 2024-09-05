@@ -38,13 +38,15 @@ const Buttons = ({
   IconLeft,
   IconRight,
   className,
+  disabled = false,
   ...props
 }: ButtonProps) => (
   <TouchableOpacity
     onPress={onPress}
     className={`w-full rounded-full p-4 flex items-center ${getBgVariantStyle(
       variant
-    )} ${className}`}
+    )} ${className} ${disabled ? "opacity-50" : ""}`}
+    disabled={disabled}
     {...props}
   >
     {IconLeft && <IconLeft />}

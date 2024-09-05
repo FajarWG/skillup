@@ -8,13 +8,14 @@ import { Link, router } from "expo-router";
 import {
   ArrowDown,
   ArrowDown2,
+  ArrowUp2,
   Briefcase,
   Code,
   DocumentCloud,
   DocumentUpload,
   SearchNormal,
 } from "iconsax-react-native";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ActivityIndicator,
   ScrollView,
@@ -27,13 +28,90 @@ import SelectDropdown from "react-native-select-dropdown";
 
 import { SafeAreaView } from "react-native-safe-area-context";
 import JobCard from "@/components/JobCard";
+import { useFetch } from "@/lib/fetch";
 
 const Jobs = () => {
   const [description, setDescription] = useState("");
 
-  // change color of front bar, dari biru gelap jadi biru muda
+  // get data API with useFetch
 
-  const barData = [
+  // const { data, loading } = useFetch(
+  //   "http://192.168.11.207:5000/jobs/tren?category=website"
+  // );
+
+  const dataAPI = {
+    data: [
+      {
+        job_title: "backend developer",
+        total: 7,
+      },
+      {
+        job_title: "backend engineer",
+        total: 6,
+      },
+      {
+        job_title: "full stack developer",
+        total: 5,
+      },
+      {
+        job_title: "java software engineer",
+        total: 4,
+      },
+      {
+        job_title: "software engineer",
+        total: 4,
+      },
+      {
+        job_title: "frontend developer",
+        total: 3,
+      },
+    ],
+    message: "OK",
+    status: 200,
+  };
+
+  const dataAPIMobile = {
+    data: [
+      {
+        job_title: "mobile developer",
+        total: 15,
+      },
+      {
+        job_title: "mobile engineer",
+        total: 8,
+      },
+      {
+        job_title: "mobile app developer",
+        total: 8,
+      },
+      {
+        job_title: "android developer",
+        total: 6,
+      },
+      {
+        job_title: "ios developer",
+        total: 4,
+      },
+      {
+        job_title: "flutter developer",
+        total: 3,
+      },
+    ],
+    message: "OK",
+    status: 200,
+  };
+
+  const colors = [
+    "#254EDB", // Darkest color
+    "#3366FF",
+    "#6690FF",
+    "#84A9FF",
+    "#A2C3FF",
+    "#C0DCFF",
+    "#E0F3FF", // Lightest color
+  ];
+
+  const [barData, setBarData] = useState([
     {
       value: 50,
       label: "Front End",
@@ -44,32 +122,32 @@ const Jobs = () => {
       label: "Back End",
       frontColor: "#3366FF",
     },
-    {
-      value: 25,
-      label: "Dev Ops",
-      frontColor: "#6690FF",
-    },
-    {
-      value: 20,
-      label: "Cyber Sec",
-      frontColor: "#84A9FF",
-    },
-    {
-      value: 10,
-      label: "Database",
-      frontColor: "#A2C3FF",
-    },
-    {
-      value: 8,
-      label: "UI/UX",
-      frontColor: "#C0DCFF",
-    },
-    {
-      value: 5,
-      label: "QA",
-      frontColor: "#E0F3FF",
-    },
-  ];
+  ]);
+
+  const [selectedCategory, setSelectedCategory] = useState("website");
+
+  useEffect(() => {
+    if (selectedCategory === "website") {
+      const barData = dataAPI.data.map((item: any, index: any) => {
+        return {
+          value: item.total,
+          label: item.job_title,
+          frontColor: colors[index],
+        };
+      });
+      setBarData(barData);
+    }
+    if (selectedCategory === "mobile") {
+      const barData = dataAPIMobile.data.map((item: any, index: any) => {
+        return {
+          value: item.total,
+          label: item.job_title,
+          frontColor: colors[index],
+        };
+      });
+      setBarData(barData);
+    }
+  }, [selectedCategory]);
 
   const categoryJobs = [
     {
@@ -91,6 +169,46 @@ const Jobs = () => {
 
   const [search, setSearch] = useState("");
 
+  const renderDot = (color: any) => {
+    return (
+      <View
+        style={{
+          height: 10,
+          width: 10,
+          borderRadius: 5,
+          backgroundColor: color,
+          marginRight: 10,
+        }}
+      />
+    );
+  };
+  const renderLegendComponent = (barData: any) => {
+    return (
+      <View
+        style={{
+          flexDirection: "row",
+          flexWrap: "wrap",
+          gap: 5,
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+        }}
+      >
+        {barData.map((item: any, index: any) => (
+          <View
+            key={index}
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            {renderDot(item.frontColor)}
+            <Text>{item.label}</Text>
+          </View>
+        ))}
+      </View>
+    );
+  };
+
   return (
     <SafeAreaView className="p-6 bg-white">
       <ScrollView
@@ -109,8 +227,9 @@ const Jobs = () => {
           <SelectDropdown
             data={categoryJobs}
             onSelect={(selectedItem, index) => {
-              console.log(selectedItem, index);
+              setSelectedCategory(selectedItem.title.toLowerCase());
             }}
+            defaultValueByIndex={0}
             renderButton={(selectedItem, isOpened) => {
               return (
                 <View style={styles.dropdownButtonStyle}>
@@ -119,8 +238,12 @@ const Jobs = () => {
                     {(selectedItem && selectedItem.title) ||
                       "Select category jobs"}
                   </Text>
-                  {/* <Icon name={isOpened ? 'chevron-up' : 'chevron-down'} style={styles.dropdownButtonArrowStyle} /> */}
-                  <ArrowDown2 size={20} color="#111827" />
+
+                  {!isOpened ? (
+                    <ArrowDown2 size={20} color="#111827" />
+                  ) : (
+                    <ArrowUp2 size={20} color="#111827" />
+                  )}
                 </View>
               );
             }}
@@ -147,7 +270,7 @@ const Jobs = () => {
                 5.987,34
               </Text>
               <Text className=" text-xs text-gray-600 font-medium">
-                Sunday, 20 April 2024
+                Sunday, 5 September 2024
               </Text>
 
               <View className="border-b border-gray-200 mt-4"></View>
@@ -155,17 +278,18 @@ const Jobs = () => {
 
             <BarChart
               barWidth={22}
-              noOfSections={3}
+              noOfSections={8}
               barBorderRadius={4}
               frontColor="lightgray"
-              rotateLabel
               data={barData}
-              labelsExtraHeight={60}
-              yAxisThickness={0}
-              xAxisThickness={0}
+              labelsExtraHeight={20}
+              yAxisThickness={1}
+              xAxisThickness={1}
               labelWidth={50}
               showValuesAsTopLabel
+              xAxisLabelsHeight={0}
             />
+            {renderLegendComponent(barData)}
           </View>
           {/* Your Skill */}
 

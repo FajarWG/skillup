@@ -1,7 +1,7 @@
 import Buttons from "@/components/Buttons";
 import JobCard from "@/components/JobCard";
 import { jobList } from "@/constants";
-import { SignedIn, SignedOut, useUser, useAuth } from "@clerk/clerk-expo";
+import { SignedIn, SignedOut, useUser } from "@clerk/clerk-expo";
 import { Link, router } from "expo-router";
 import { Code } from "iconsax-react-native";
 import {
@@ -12,12 +12,15 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { BlurView } from "expo-blur";
 
 import { SafeAreaView } from "react-native-safe-area-context";
+import useUserDataStore from "@/lib/userdata";
 
 const Home = () => {
   const { user } = useUser();
-  const { signOut } = useAuth();
+
+  const { skill }: any = useUserDataStore();
 
   return (
     <SafeAreaView className="p-6 bg-white">
@@ -41,18 +44,48 @@ const Home = () => {
             <Text className=" text-lg font-medium">Your Skill</Text>
 
             <View className="w-full bg-primary-900 rounded-xl mt-5 p-[18px]">
+              {skill === null && (
+                <BlurView
+                  intensity={100}
+                  tint="dark"
+                  className="absolute top-0 left-0 right-0 bottom-0 rounded-xl z-10 flex items-center justify-center"
+                >
+                  <Text className="text-white font-semibold text-center p-5">
+                    You haven't added a LinkedIn account on the skills page,
+                    please add it to get skill recommendations.
+                  </Text>
+                  <Buttons
+                    className="px-4 py-2 w-40"
+                    title="Add LinkedIn"
+                    onPress={() => {
+                      router.replace("/(root)/(tabs)/skills");
+                    }}
+                  />
+                </BlurView>
+              )}
               <View className="flex flex-row items-center">
                 <View className="p-3 bg-white rounded-xl">
                   <Code size="28" color="#292D32" />
                 </View>
-                <View className="ml-4">
-                  <Text className="text-white font-semibold text-lg">
-                    Web Development
-                  </Text>
-                  <Text className="text-neutral-400 text-sm">
-                    There are 3 suggestions to learn
-                  </Text>
-                </View>
+                {skill == null ? (
+                  <View className="ml-4">
+                    <Text className="text-white font-semibold text-lg">
+                      No Skill Added
+                    </Text>
+                    <Text className="text-neutral-400 text-sm">
+                      Add your LinkedIn account to get skill recommendations
+                    </Text>
+                  </View>
+                ) : (
+                  <View className="ml-4">
+                    <Text className="text-white font-semibold text-lg">
+                      {skill.work}
+                    </Text>
+                    <Text className="text-neutral-400 text-sm">
+                      There are 3 suggestions to learn
+                    </Text>
+                  </View>
+                )}
               </View>
 
               <View className="flex flex-row justify-between mt-5">
@@ -61,10 +94,16 @@ const Home = () => {
                     <Text className="text-neutral-400 font-medium text-sm">
                       Your Score:
                     </Text>
-                    <Text className="text-white text-xl font-semibold">
-                      20
-                      <Text className="text-xs leading-6">/100</Text>
-                    </Text>
+                    {skill == null ? (
+                      <Text className="text-white text-xl font-semibold">
+                        0<Text className="text-xs leading-6">/100</Text>
+                      </Text>
+                    ) : (
+                      <Text className="text-white text-xl font-semibold">
+                        20
+                        <Text className="text-xs leading-6">/100</Text>
+                      </Text>
+                    )}
                   </View>
                 </View>
 

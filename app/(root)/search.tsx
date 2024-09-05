@@ -45,6 +45,7 @@ const Search = () => {
         <View className="px-6">
           {jobList.map((job, index) => (
             <JobCard
+              id={job.id}
               key={index}
               logo={job.logo}
               jobTitle={job.jobTitle}
