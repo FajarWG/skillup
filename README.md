@@ -1,50 +1,81 @@
-# Welcome to your Expo app 👋
+![Logo SkillUp](https://github.com/user-attachments/assets/b0efdd2a-fb35-48fa-8036-00d334a15014)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
+# SkillUp App
 
-1. Install dependencies
+SkillUp is a powerful tool designed to help users analyze the skills they need to learn based on their LinkedIn data and company information. It also provides insights into current job trends and offers AI-powered CV checks.
+## Technology
 
-   ```bash
-   npm install
-   ```
+- React Native
+- Python
+- Azure OpenAI
+- Azure Cosmos DB
+- Sellenium
 
-2. Start the app
+## Features
 
-   ```bash
-    npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+- Skill Analysis: Analyzes your LinkedIn data to identify skill gaps and suggests skills to learn.
+- Job Trends: Stay updated with the latest trends in the job market.
+- CV Checker: Get detailed feedback on your CV with AI-driven insights.
+
+
+## Installation
+
+Clone the repository: 
+```
+git clone https://github.com/FajarWG/skillup.git
+```
+
+Navigate to the project directory: 
+``` 
+cd skillup
+```
+
+Install the dependencies:
+``` 
+npm run android
+```
+
+## Running the App
+You can run the app in several environments:
 
 - [development build](https://docs.expo.dev/develop/development-builds/introduction/)
 - [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Data
+The following is the data process that we do on the SkillUp application
 
-## Get a fresh project
+- [Tren Job](https://github.com/azizriza1210/SkillUp)
+- [CV Analysis](https://www.kaggle.com/code/saffanahelminafisah/skill-up-cv/notebook)
 
-When you're ready, run:
 
-```bash
-npm run reset-project
-```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Screenshots
 
-## Learn more
+![Onboarding 1](https://github.com/user-attachments/assets/cf877be5-29b8-41ee-9230-b9d1c7cee8d0)
+![Onboarding 2](https://github.com/user-attachments/assets/6b99de8a-1938-4709-ac34-7edb0bfa7efb)
+![Onboarding 3](https://github.com/user-attachments/assets/a59ca491-23bc-4e3c-9b4c-8749d51c9beb)
+![Login](https://github.com/user-attachments/assets/165b98c4-3eb0-4da0-8dd9-bfa3c838fb93)
+![Register](https://github.com/user-attachments/assets/d38e552d-158a-41b4-b811-38bf5891f8dc)
+![Homepage](https://github.com/user-attachments/assets/58207f54-8a2f-40e2-be52-be86c7664027)
+![Skills](https://github.com/user-attachments/assets/3e6b4696-ce3e-416e-b4d3-25e1b6a7e469)
+![Job Trends](https://github.com/user-attachments/assets/4147114e-f204-442f-ae8e-eee277bbd19a)
+![CV](https://github.com/user-attachments/assets/ed92fb33-aa27-4814-a49c-b0cb0b20d549)
+![CV Results](https://github.com/user-attachments/assets/58d03603-3695-4453-b33c-0824e758258c)
+![Loading Analyze CV](https://github.com/user-attachments/assets/3d04da34-952d-4d56-beae-3b34c1f93f02)
 
-To learn more about developing your project with Expo, look at the following resources:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
-## Join the community
 
-Join our community of developers creating universal apps.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Video Presentation
+
+Link Youtube: https://youtu.be/pkCoyCeg83U?si=NfafTCgg8B0RruC-
+
+
+## Disclaimer
+
+Applications are not yet fully implemented/integrated with data. Therefore we attach above the process of using data.
